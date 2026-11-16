@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Astaane prototype</title>
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="fonts/fonts.css" rel="stylesheet">
+<style>html,body{background:transparent}body{margin:0;padding:20px 20px 40px}a{color:#2318C8}a:hover{color:#1B1464}</style>
+</helmet>
+<div dir="rtl" style="width:300px;height:620px;border-radius:36px;background:#EEF2FA;box-shadow:0 40px 80px -30px rgba(25,20,90,0.35),0 0 0 1px #DCE1EE;overflow:hidden;position:relative;font-family:'Vazirmatn',sans-serif;display:flex;flex-direction:column;color:#2318C8;user-select:none">
+
+  <sc-if value="{{ isOnb }}" hint-placeholder-val="{{ false }}">
+    <div style="flex:1;display:flex;flex-direction:column;padding:28px 20px 20px;min-height:0">
+      <div style="display:flex;align-items:center;justify-content:space-between;height:24px">
+        <sc-for list="{{ dots }}" as="d" hint-placeholder-count="10">
+          <sc-if value="{{ d.cur }}"><span style="width:24px;height:24px;border-radius:50%;background:#2318C8;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Rounded';font-size:15px;font-variation-settings:'FILL' 1">{{ d.icon }}</span></sc-if>
+          <sc-if value="{{ d.notCur }}"><span style="width:4px;height:4px;border-radius:50%;background:{{ d.bg }}"></span></sc-if>
+        </sc-for>
+      </div>
+      <h3 style="font-size:20px;font-weight:700;margin:28px 0 6px;line-height:1.5">{{ onb.title }}</h3>
+      <p style="font-size:11.5px;margin:0;color:#2318C8;opacity:0.85;line-height:1.7">{{ onb.sub }}</p>
+
+      <sc-if value="{{ isStep1 }}">
+        <div style="display:flex;flex-wrap:wrap;gap:7px;margin-top:40px">
+          <sc-for list="{{ chips }}" as="c">
+            <button onClick="{{ c.toggle }}" style="font-family:inherit;font-size:11px;padding:6px 11px;border-radius:999px;border:1px solid #2318C8;background:{{ c.bg }};color:{{ c.fg }};cursor:pointer;line-height:1.6">{{ c.label }}</button>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStep2 }}">
+        <div style="margin-top:36px;position:relative">
+          <img src="{{ tastePhoto }}" alt="" style="width:100%;height:190px;object-fit:cover;border-radius:16px;display:block">
+          <div style="position:absolute;top:168px;left:0;right:0;display:flex;justify-content:center;gap:28px">
+            <button onClick="{{ tasteNext }}" style="width:46px;height:46px;border-radius:50%;border:0;background:#1E8A3A;color:#FFFFFF;font-family:'Material Symbols Rounded';font-size:22px;font-variation-settings:'FILL' 1;cursor:pointer">thumb_up</button>
+            <button onClick="{{ tasteNext }}" style="width:46px;height:46px;border-radius:50%;border:0;background:#9B1C24;color:#FFFFFF;font-family:'Material Symbols Rounded';font-size:22px;font-variation-settings:'FILL' 1;cursor:pointer">thumb_down</button>
+          </div>
+          <p style="text-align:center;font-size:11px;margin:40px 0 0;opacity:0.7">{{ tasteCount }}</p>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ isStep3 }}">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 20px;margin-top:22px;justify-items:center">
+          <sc-for list="{{ amen }}" as="a">
+            <button onClick="{{ a.toggle }}" style="background:none;border:0;padding:0;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;color:#2318C8">
+              <span style="width:62px;height:62px;border-radius:12px;border:2px solid #2318C8;background:{{ a.bg }};color:{{ a.fg }};display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Rounded';font-size:34px;font-variation-settings:'FILL' 1">{{ a.icon }}</span>
+              <span style="font-size:10.5px">{{ a.label }}</span>
+            </button>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <div style="margin-top:auto;display:flex;justify-content:space-between;gap:12px">
+        <button onClick="{{ next }}" style="height:44px;padding:0 18px 0 14px;border-radius:999px;border:0;background:#F5C400;color:#1B1464;font-family:inherit;font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px;cursor:pointer">{{ nextLabel }}<span style="font-family:'Material Symbols Rounded';font-size:20px">chevron_left</span></button>
+        <button onClick="{{ prev }}" style="height:44px;padding:0 14px 0 18px;border-radius:999px;border:0;background:#F5C400;color:#1B1464;font-family:inherit;font-size:14px;font-weight:700;display:flex;align-items:center;gap:6px;cursor:pointer;opacity:{{ prevOpacity }}"><span style="font-family:'Material Symbols Rounded';font-size:20px">chevron_right</span>قبلی</button>
+      </div>
+    </div>
+  </sc-if>
+
+  <sc-if value="{{ isApp }}" hint-placeholder-val="{{ true }}">
+    <div style="flex:1;min-height:0;display:flex;flex-direction:column">
+
+      <sc-if value="{{ tabHome }}" hint-placeholder-val="{{ true }}">
+        <div style="flex:1;min-height:0;padding:16px 14px 10px;display:flex;flex-direction:column">
+          <sc-if value="{{ hasCur }}" hint-placeholder-val="{{ true }}">
+            <div onPointerDown="{{ down }}" onPointerMove="{{ move }}" onPointerUp="{{ up }}" onPointerCancel="{{ up }}" style="flex:1;min-height:0;background:#FFFFFF;border-radius:24px;padding:12px;display:flex;flex-direction:column;position:relative;touch-action:pan-y;cursor:grab;transform:translateX({{ dx }}px) rotate({{ rot }}deg);transition:{{ trans }}">
+              <div style="position:absolute;top:0;left:22px;z-index:2;display:flex;flex-direction:column;align-items:stretch;border-radius:0 0 14px 14px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.12)">
+                <span style="background:#2318C8;color:#FFFFFF;font-size:15px;font-weight:700;padding:4px 14px;text-align:center">{{ cur.price }}</span>
+                <span style="background:{{ cur.labelBg }};color:{{ cur.labelFg }};font-size:12px;font-weight:500;padding:3px 14px;text-align:center">{{ cur.label }}</span>
+              </div>
+              <div style="position:relative;flex:1;min-height:0;border-radius:18px;overflow:hidden">
+                <img src="{{ cur.photo }}" alt="" draggable="false" onClick="{{ nextPhoto }}" style="width:100%;height:100%;object-fit:cover;display:block">
+                <div style="position:absolute;bottom:10px;left:0;right:0;display:flex;justify-content:center;gap:4px">
+                  <sc-for list="{{ photoDots }}" as="p"><span style="width:6px;height:6px;border-radius:50%;background:{{ p.bg }}"></span></sc-for>
+                </div>
+                <span style="position:absolute;top:10px;right:10px;background:rgba(17,17,20,0.6);color:#FFFFFF;font-size:10px;padding:3px 8px;border-radius:999px">{{ cur.room }}</span>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:{{ likeOp }}"><span style="width:84px;height:84px;border-radius:50%;background:#1E8A3A;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Rounded';font-size:52px">check</span></div>
+                <div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:{{ nopeOp }}"><span style="width:84px;height:84px;border-radius:50%;background:#9B1C24;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-family:'Material Symbols Rounded';font-size:52px">close</span></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:9px 10px;padding:14px 6px 12px;font-size:12.5px;font-weight:500">
+                <sc-for list="{{ cur.specs }}" as="s"><span style="display:flex;align-items:center;gap:6px"><span style="font-family:'Material Symbols Rounded';font-size:18px;color:#B6BCD2;font-variation-settings:'FILL' 1">{{ s.icon }}</span>{{ s.text }}</span></sc-for>
+              </div>
+              <div style="display:flex;align-items:center;gap:8px">
+                <button onClick="{{ nope }}" style="width:48px;height:48px;flex:none;border-radius:50%;border:0;background:#9B1C24;color:#FFFFFF;font-family:'Material Symbols Rounded';font-size:22px;font-variation-settings:'FILL' 1;cursor:pointer">thumb_down</button>
+                <button onClick="{{ like }}" style="flex:1;height:48px;border-radius:999px;border:0;background:#1E8A3A;color:#FFFFFF;font-family:inherit;font-size:15px;font-weight:700;cursor:pointer">هماهنگی بازدید</button>
+                <button onClick="{{ save }}" style="width:48px;height:48px;flex:none;border-radius:50%;border:0;background:#F5C400;color:#1B1464;font-family:'Material Symbols Rounded';font-size:22px;font-variation-settings:'FILL' 1;cursor:pointer">bookmarks</button>
+              </div>
+            </div>
+          </sc-if>
+          <sc-if value="{{ deckEmpty }}">
+            <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;padding:24px">
+              <span style="font-family:'Material Symbols Rounded';font-size:44px;color:#B6BCD2">task_alt</span>
+              <span style="font-size:16px;font-weight:700">پیشنهادهای امروز تموم شد</span>
+              <span style="font-size:12px;line-height:1.8;opacity:0.8">فردا خونه‌های تازه‌ای که با سلیقه‌ات جوره برات می‌فرستیم.</span>
+              <button onClick="{{ reset }}" style="margin-top:8px;height:40px;padding:0 18px;border-radius:999px;border:0;background:#F5C400;color:#1B1464;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer">دوباره ببین</button>
+            </div>
+          </sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ tabList }}">
+        <div style="flex:1;min-height:0;overflow:auto;padding:24px 16px 12px;display:flex;flex-direction:column;gap:10px">
+          <span style="font-size:18px;font-weight:700;margin-bottom:6px">{{ listTitle }}</span>
+          <sc-for list="{{ listItems }}" as="l">
+            <div style="background:#FFFFFF;border-radius:16px;padding:8px;display:flex;gap:10px;align-items:center">
+              <img src="{{ l.photo }}" alt="" style="width:64px;height:64px;border-radius:12px;object-fit:cover;flex:none">
+              <div style="display:flex;flex-direction:column;gap:3px;min-width:0">
+                <span style="font-size:14px;font-weight:700">{{ l.price }}</span>
+                <span style="font-size:11px;opacity:0.8">{{ l.summary }}</span>
+                <span style="align-self:flex-start;font-size:10px;padding:1px 8px;border-radius:999px;background:{{ l.labelBg }};color:{{ l.labelFg }}">{{ l.label }}</span>
+              </div>
+            </div>
+          </sc-for>
+          <sc-if value="{{ listEmpty }}"><span style="font-size:12px;line-height:1.8;opacity:0.7;margin-top:24px;text-align:center">{{ emptyText }}</span></sc-if>
+        </div>
+      </sc-if>
+
+      <sc-if value="{{ tabFilters }}">
+        <div style="flex:1;min-height:0;overflow:auto;padding:22px 16px 16px;display:flex;flex-direction:column;gap:16px">
+          <sc-for list="{{ sliders }}" as="r">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:15px;font-weight:700">{{ r.label }}</span>
+              <div dir="ltr" style="position:relative;height:32px">
+                <span style="position:absolute;left:0;right:0;top:12px;height:8px;border-radius:999px;background:#C9CEDD"></span>
+                <span style="position:absolute;left:{{ r.from }}%;width:{{ r.span }}%;top:12px;height:8px;background:#2318C8"></span>
+                <span style="position:absolute;left:{{ r.from }}%;top:0;width:32px;height:32px;margin-left:-16px;border-radius:50%;background:#2318C8;color:#FFFFFF;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ r.min }}</span>
+                <span style="position:absolute;left:{{ r.to }}%;top:0;width:32px;height:32px;margin-left:-16px;border-radius:50%;background:#2318C8;color:#FFFFFF;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ r.max }}</span>
+              </div>
+            </div>
+          </sc-for>
+          <sc-for list="{{ filterGroups }}" as="g">
+            <div style="display:flex;flex-direction:column;gap:8px">
+              <span style="font-size:15px;font-weight:700">{{ g.label }}</span>
+              <div style="display:flex;flex-wrap:wrap;gap:5px">
+                <sc-for list="{{ g.opts }}" as="o">
+                  <button onClick="{{ o.pick }}" style="font-family:inherit;font-size:10.5px;padding:5px 8px;border-radius:999px;border:1px solid #2318C8;background:{{ o.bg }};color:{{ o.fg }};cursor:pointer;line-height:1.6">{{ o.label }}</button>
+                </sc-for>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+
+      <nav style="height:64px;flex:none;background:#FFFFFF;border-top:1px solid #E3E7F1;display:flex;justify-content:space-around;align-items:center;padding:0 4px">
+        <sc-for list="{{ tabs }}" as="t" hint-placeholder-count="5">
+          <button onClick="{{ t.go }}" style="background:none;border:0;padding:4px 2px;font-family:inherit;display:flex;flex-direction:column;align-items:center;gap:2px;color:{{ t.color }};cursor:pointer;min-width:44px;position:relative">
+            <span style="font-family:'Material Symbols Rounded';font-size:22px;font-variation-settings:'FILL' 1">{{ t.icon }}</span>
+            <span style="font-size:9.5px;font-weight:{{ t.weight }}">{{ t.label }}</span>
+            <sc-if value="{{ t.hasBadge }}"><span style="position:absolute;top:0;left:6px;min-width:15px;height:15px;border-radius:999px;background:#F5C400;color:#1B1464;font-size:9px;font-weight:700;display:flex;align-items:center;justify-content:center">{{ t.badge }}</span></sc-if>
+          </button>
+        </sc-for>
+      </nav>
+    </div>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:340,&quot;height&quot;:680},&quot;startScreen&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;deck&quot;,&quot;onboarding1&quot;,&quot;onboarding2&quot;,&quot;onboarding3&quot;],&quot;default&quot;:&quot;deck&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;startIndex&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:0,&quot;min&quot;:0,&quot;max&quot;:3,&quot;tsType&quot;:&quot;number&quot;},&quot;lockScreen&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;}}">
+const Q = new URLSearchParams(location.search);
+const fa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+const LABELS = { under: ['زیر قیمت', '#1E8A3A', '#FFFFFF'], fair: ['قیمت مناسب', '#F5C400', '#1B1464'], over: ['قیمت گران', '#9B1C24', '#FFFFFF'] };
+const HOMES = [
+  { price: '۴.۲ میلیارد', tag: 'under', photos: [['assets/photo-home-1.webp', 'پذیرایی'], ['assets/photo-home-1.webp', 'نشیمن'], ['assets/photo-facade.webp', 'نما']], area: '۹۵ متر', street: 'بلوار کمالی', beds: '۲ خواب', park: '۲ پارکینگ سندی', floor: 'طبقه ۲ از ۵', units: '۲ واحدی' },
+  { price: '۳.۸ میلیارد', tag: 'fair', photos: [['assets/photo-home-2.webp', 'پذیرایی'], ['assets/photo-home-2.webp', 'نشیمن']], area: '۸۸ متر', street: 'خیابان پونک', beds: '۲ خواب', park: '۱ پارکینگ', floor: 'طبقه ۴ از ۶', units: '۳ واحدی' },
+  { price: '۵.۱ میلیارد', tag: 'over', photos: [['assets/photo-home-3.webp', 'آشپزخانه'], ['assets/photo-street.webp', 'ویو'], ['assets/photo-facade.webp', 'نما']], area: '۱۰۰ متر', street: 'بلوار عدل', beds: '۲ خواب', park: '۱ پارکینگ', floor: 'طبقه ۱ از ۵', units: '۴ واحدی' },
+  { price: '۴.۷ میلیارد', tag: 'fair', photos: [['assets/photo-facade.webp', 'نما'], ['assets/photo-home-2.webp', 'نشیمن']], area: '۹۳ متر', street: 'ایران‌زمین شمالی', beds: '۲ خواب', park: '۲ پارکینگ', floor: 'طبقه ۶ از ۸', units: '۲ واحدی' },
+];
+const ONB = [
+  { title: 'خونه‌ی مدنظرت رو توصیف کن', sub: 'برای این کار ۳تا از جمله‌های زیر رو انتخاب کن', icon: 'dns' },
+  { title: 'این خونه رو می‌پسندی؟', sub: 'برای اینکه سلیقه‌ت دستمون بیاد می‌پرسیم', icon: 'image' },
+  { title: 'می‌خوای اطراف خونه‌ت چی باشه؟', sub: 'اینجا می‌تونی هرچندتا گزینه که می‌خوای انتخاب کنی', icon: 'location_on' },
+];
+const CHIPS = ['خیلی خوش‌مسیره و دسترسی خوبی داره', 'آشپزخونه‌ش نورگیر و جاداره', 'نمای ساختمون تروتمیزه', 'روف گاردن مناسب دورهمی', 'لابی‌من داره', 'اتاق‌خواب‌های دل‌بازی داره', 'بالکن‌داره و میشه توش باربیکیو راه انداخت', 'هال و پذیرایی مناسب مهمانی'];
+const AMEN = [['directions_subway', 'حمل‌ونقل عمومی'], ['menu_book', 'مدرسه'], ['shopping_cart', 'سوپرمارکت'], ['park', 'پارک و فضای سبز'], ['restaurant', 'کافه و رستوران'], ['traffic', 'اتوبان و خیابون‌های اصلی']];
+const TASTE = ['assets/photo-home-2.webp', 'assets/photo-home-1.webp', 'assets/photo-facade.webp'];
+const TABS = [['home', 'پیشنهادها', 'home'], ['saved', 'ذخیره شده‌ها', 'bookmarks'], ['visits', 'قرارهای بازدید', 'thumb_up'], ['nope', 'رد شده‌ها', 'thumb_down'], ['filters', 'فیلترها', 'tune']];
+const LISTS = { saved: ['ذخیره شده‌ها', 'هنوز خونه‌ای ذخیره نکردی.'], visits: ['قرارهای بازدید', 'خونه‌هایی که می‌پسندی اینجا میان تا بازدیدشون رو هماهنگ کنیم.'], nope: ['رد شده‌ها', 'خونه‌هایی که رد کردی برای مرور دوباره اینجا می‌مونن.'] };
+
+const SLIDERS = [{ label: 'متراژ', min: '۹۰', max: '۱۱۰', from: 40, to: 80, span: 40 }, { label: 'قیمت', min: '۲.۵', max: '۵', from: 20, to: 86, span: 66 }];
+const FILTERS = [['سال ساخت', ['نوساز', 'زیر ۷ سال', 'زیر ۱۵ سال', 'فرقی نداره']], ['طبقه', ['آخر', 'وسط', 'اول', 'فرقی نداره']], ['تعداد واحد در هر طبقه', ['یک', 'یک یا دو', 'سه یا بیشتر', 'فرقی نداره']], ['آسانسور', ['بله حتما', 'اگه طبقه اول بود، مهم نیست', 'فرقی نداره']], ['پارکینگ', ['حداقل یکی', 'حتما دوتا یا بیشتر', 'فرقی نداره']], ['انباری', ['حتما داشته باشه', 'فرقی نداره']]];
+
+class Component extends DCLogic {
+  state = { filt: FILTERS.map(f => f[1].length - 1), screen: this.props.startScreen ?? 'deck', chips: [0, 1, 3], amen: [0, 2], taste: 0, idx: (+Q.get('start') || 0), photo: 0, liked: [], disliked: [], saved: [], tab: 'home', dx: 0, drag: false, snap: false };
+  step() { return { onboarding1: 0, onboarding2: 1, onboarding3: 2 }[this.state.screen]; }
+  go(screen) { if (!(Q.get('lock') === '1')) this.setState({ screen, tab: 'home' }); }
+  toggle(key, i) { this.setState(s => ({ [key]: s[key].includes(i) ? s[key].filter(x => x !== i) : [...s[key], i] })); }
+  decide(kind) {
+    if ((Q.get('lock') === '1') || this.busy) return;
+    const i = this.state.idx; if (i >= HOMES.length) return;
+    this.busy = true;
+    const out = kind === 'liked' ? 420 : kind === 'disliked' ? -420 : 0;
+    this.setState({ dx: out, drag: false });
+    setTimeout(() => {
+      this.setState(s => ({ [kind]: [...s[kind], i], idx: s.idx + 1, photo: 0, dx: 0, snap: true }));
+      requestAnimationFrame(() => requestAnimationFrame(() => { this.setState({ snap: false }); this.busy = false; }));
+    }, out ? 260 : 60);
+  }
+  renderVals() {
+    const s = this.state, st = this.step(), isOnb = st !== undefined;
+    const home = HOMES[s.idx];
+    const mk = h => { const [label, labelBg, labelFg] = LABELS[h.tag]; return { label, labelBg, labelFg }; };
+    let cur = null;
+    if (home) {
+      const p = home.photos[s.photo % home.photos.length];
+      cur = { ...mk(home), price: home.price, photo: p[0], room: p[1], specs: [['straighten', home.area], ['directions_car', home.park], ['location_on', home.street], ['apartment', home.floor], ['bed', home.beds], ['door_front', home.units]].map(([icon, text]) => ({ icon, text })) };
+    }
+    const listKey = { saved: 'saved', visits: 'liked', nope: 'disliked' }[s.tab];
+    const listIdx = listKey ? s[listKey] : [];
+    const counts = { saved: s.saved.length, visits: s.liked.length, nope: s.disliked.length };
+    const curDot = 6 + (st ?? 0);
+    return {
+      isOnb, isApp: !isOnb,
+      isStep1: st === 0, isStep2: st === 1, isStep3: st === 2,
+      onb: ONB[st ?? 0],
+      dots: Array.from({ length: 10 }, (_, i) => ({ cur: i === curDot, notCur: i !== curDot, icon: ONB[st ?? 0].icon, bg: i < curDot ? '#2318C8' : '#C9CEDD' })),
+      chips: CHIPS.map((label, i) => { const on = s.chips.includes(i); return { label, bg: on ? '#2318C8' : 'transparent', fg: on ? '#FFFFFF' : '#2318C8', toggle: () => this.toggle('chips', i) }; }),
+      amen: AMEN.map(([icon, label], i) => { const on = s.amen.includes(i); return { icon, label, bg: on ? '#2318C8' : '#FFFFFF', fg: on ? '#FFFFFF' : '#2318C8', toggle: () => this.toggle('amen', i) }; }),
+      tastePhoto: TASTE[s.taste % 3], tasteCount: `${fa(s.taste % 3 + 1)} از ۳`,
+      tasteNext: () => this.setState(x => ({ taste: x.taste + 1 })),
+      next: () => this.go(st < 2 ? 'onboarding' + (st + 2) : 'deck'),
+      prev: () => st > 0 && this.go('onboarding' + st),
+      nextLabel: st === 2 ? 'شروع' : 'بعدی', prevOpacity: st === 0 ? 0.45 : 1,
+      tabHome: s.tab === 'home', tabList: s.tab !== 'home' && s.tab !== 'filters', tabFilters: s.tab === 'filters',
+      sliders: SLIDERS,
+      filterGroups: FILTERS.map(([label, opts], gi) => ({ label, opts: opts.map((o, oi) => { const on = s.filt[gi] === oi; return { label: o, bg: on ? '#2318C8' : 'transparent', fg: on ? '#FFFFFF' : '#2318C8', pick: () => this.setState(x => ({ filt: x.filt.map((v, k) => k === gi ? oi : v) })) }; }) })),
+      hasCur: !!cur, deckEmpty: !cur, cur: cur || {},
+      photoDots: home ? home.photos.map((_, i) => ({ bg: i === s.photo % home.photos.length ? '#FFFFFF' : 'rgba(255,255,255,0.5)' })) : [],
+      nextPhoto: () => this.setState(x => ({ photo: x.photo + 1 })),
+      dx: s.dx, rot: s.dx / 22, trans: s.drag || s.snap ? 'none' : 'transform 0.26s ease',
+      likeOp: Math.max(0, Math.min(1, s.dx / 110)), nopeOp: Math.max(0, Math.min(1, -s.dx / 110)),
+      down: e => { if ((Q.get('lock') === '1') || e.target.closest('button')) return; this.x0 = e.clientX; this.moved = false; e.currentTarget.setPointerCapture(e.pointerId); this.setState({ drag: true }); },
+      move: e => { if (!s.drag) return; const d = e.clientX - this.x0; if (Math.abs(d) > 4) this.moved = true; this.setState({ dx: d }); },
+      up: () => { if (!s.drag) return; if (s.dx > 90) this.decide('liked'); else if (s.dx < -90) this.decide('disliked'); else this.setState({ drag: false, dx: 0 }); },
+      like: () => this.decide('liked'), nope: () => this.decide('disliked'), save: () => this.decide('saved'),
+      reset: () => this.setState({ idx: 0, liked: [], disliked: [], saved: [], photo: 0 }),
+      listTitle: listKey ? LISTS[s.tab][0] : '', emptyText: listKey ? LISTS[s.tab][1] : '', listEmpty: listIdx.length === 0,
+      listItems: listIdx.map(i => { const h = HOMES[i]; return { ...mk(h), price: h.price, photo: h.photos[0][0], summary: `${h.area} · ${h.street} · ${h.beds}` }; }),
+      tabs: TABS.map(([id, label, icon]) => { const on = s.tab === id; const b = counts[id] || 0; return { label, icon, color: on ? '#2318C8' : '#A3A9BE', weight: on ? 700 : 400, hasBadge: b > 0, badge: fa(b), go: () => { if ((Q.get('lock') === '1')) return; this.setState({ tab: id }); } }; }),
+    };
+  }
+}
+</script>
+</body>
+</html>
