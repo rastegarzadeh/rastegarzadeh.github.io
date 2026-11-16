@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hengam · UI gallery</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF;color:#111114;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#2B1FD1;text-decoration:none}
+a:hover{color:#111114}
+img{display:block;max-width:100%}
+</style>
+</helmet>
+<header style="max-width:1200px;margin:0 auto;padding:24px clamp(20px,5vw,48px);display:flex;justify-content:space-between;align-items:center;gap:16px">
+  <a href="./" style="font-weight:600;font-size:15px;color:#111114">Mohammad Rastegar</a>
+  <a href="./#galleries" style="font-size:14px;color:#5B5B66">← All projects</a>
+</header>
+<main style="max-width:1200px;margin:0 auto;padding:clamp(32px,6vw,72px) clamp(20px,5vw,48px) clamp(56px,8vw,96px);display:flex;flex-direction:column;gap:clamp(48px,6vw,72px)">
+  <section data-screen-label="Intro" style="display:flex;flex-direction:column;gap:24px;max-width:760px">
+    <span style="font-size:14px;color:#6B6B76">UI gallery</span>
+    <h1 style="margin:0;font-weight:600;font-size:clamp(36px,5vw,56px);line-height:1.1;text-wrap:balance">Hengam: time tracking for teams</h1>
+    <p style="margin:0;font-size:clamp(17px,1.8vw,20px);line-height:1.6;color:#3A3A44;text-wrap:pretty">Hengam is the time tracker we designed for our own team at Gandom. People start a timer on a task, tag it with a project and see where their week went. Managers set up workspaces and pull reports by project or teammate.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px 32px;margin-top:8px"><div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#6B6B76">Platform</span><span style="font-size:16px;line-height:1.5">Web and mobile</span></div><div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#6B6B76">My role</span><span style="font-size:16px;line-height:1.5">UI design</span></div><div style="display:flex;flex-direction:column;gap:6px"><span style="font-size:13px;color:#6B6B76">Context</span><span style="font-size:16px;line-height:1.5">Internal tool at Gandom</span></div></div>
+  </section>
+  <section aria-label="Desktop screens" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,480px),1fr));gap:40px 32px"><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><img src="assets/gallery/hengam/home.webp" alt="Timer and daily log, with time per project over the last month" loading="lazy" style="width:100%;display:block;border-radius:10px;box-shadow:0 0 0 1px #E4E4EA"><figcaption style="font-size:14px;line-height:1.5;color:#6B6B76">Timer and daily log, with time per project over the last month</figcaption></figure><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><img src="assets/gallery/hengam/reports.webp" alt="Reports filtered by project and teammate, summarised by task" loading="lazy" style="width:100%;display:block;border-radius:10px;box-shadow:0 0 0 1px #E4E4EA"><figcaption style="font-size:14px;line-height:1.5;color:#6B6B76">Reports filtered by project and teammate, summarised by task</figcaption></figure></section>
+  <section aria-label="Mobile screens" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr));gap:40px 24px"><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><img src="assets/gallery/hengam/m-home.webp" alt="Today’s log" loading="lazy" style="width:100%;display:block;border-radius:18px;box-shadow:0 0 0 1px #E4E4EA"><figcaption style="font-size:14px;line-height:1.5;color:#6B6B76">Today’s log</figcaption></figure><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><img src="assets/gallery/hengam/m-newtask.webp" alt="Starting a task and picking its project" loading="lazy" style="width:100%;display:block;border-radius:18px;box-shadow:0 0 0 1px #E4E4EA"><figcaption style="font-size:14px;line-height:1.5;color:#6B6B76">Starting a task and picking its project</figcaption></figure><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><img src="assets/gallery/hengam/m-workspaces.webp" alt="Workspaces" loading="lazy" style="width:100%;display:block;border-radius:18px;box-shadow:0 0 0 1px #E4E4EA"><figcaption style="font-size:14px;line-height:1.5;color:#6B6B76">Workspaces</figcaption></figure><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><img src="assets/gallery/hengam/m-workspace-edit.webp" alt="Adding teammates to a workspace" loading="lazy" style="width:100%;display:block;border-radius:18px;box-shadow:0 0 0 1px #E4E4EA"><figcaption style="font-size:14px;line-height:1.5;color:#6B6B76">Adding teammates to a workspace</figcaption></figure><figure style="margin:0;display:flex;flex-direction:column;gap:10px"><img src="assets/gallery/hengam/m-reports.webp" alt="Report filters" loading="lazy" style="width:100%;display:block;border-radius:18px;box-shadow:0 0 0 1px #E4E4EA"><figcaption style="font-size:14px;line-height:1.5;color:#6B6B76">Report filters</figcaption></figure></section>
+</main>
+<section data-screen-label="Next gallery" style="border-top:1px solid #E4E4EA">
+  <a href="padash.html" style="max-width:1200px;margin:0 auto;padding:clamp(40px,6vw,72px) clamp(20px,5vw,48px);display:flex;flex-direction:column;gap:8px;color:#111114">
+    <span style="font-size:14px;color:#6B6B76">Next gallery</span>
+    <span style="font-size:clamp(28px,4vw,44px);font-weight:600;line-height:1.1">Padash →</span>
+  </a>
+</section>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>
