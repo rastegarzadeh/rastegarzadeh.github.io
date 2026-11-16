@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tomeo — case study · Mohammad Rastegar</title>
+<meta name="description" content="An AI assistant inside Shopify admin that writes product titles, descriptions, tags and social captions, and shows merchants which products need SEO work first.">
+<link rel="canonical" href="https://rastegarzadeh.github.io/tomeo.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mohammad Rastegar">
+<meta property="og:title" content="Tomeo — case study · Mohammad Rastegar">
+<meta property="og:description" content="An AI assistant inside Shopify admin that writes product titles, descriptions, tags and social captions, and shows merchants which products need SEO work first.">
+<meta property="og:url" content="https://rastegarzadeh.github.io/tomeo.html">
+<meta property="og:image" content="https://rastegarzadeh.github.io/og/tomeo.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="preload" href="fonts/Geist-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Geist-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#FFFFFF;color:#111114;font-family:'Geist',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:#2B1FD1;text-decoration:none}
+a:hover{color:#111114}
+img{display:block;max-width:100%}
+@font-face{font-family:'Peyda';src:url('assets/fonts/Peyda-Medium.ttf') format('truetype');font-weight:400 500}
+@font-face{font-family:'Peyda';src:url('assets/fonts/Peyda-SemiBold.ttf') format('truetype');font-weight:600 700}
+</style>
+<style>@media (max-width:1023px){.toc{display:none!important}}</style>
+</head>
+<body>
+<div class="sc-host" data-sc-name="tomeo"><header style="max-width: 1200px; margin: 0px auto; padding: 24px clamp(20px, 5vw, 48px); display: flex; justify-content: space-between; align-items: center; gap: 16px;">
+  <a href="./" style="font-weight: 600; font-size: 15px; color: rgb(17, 17, 20);">Mohammad Rastegar</a>
+  <a href="./" style="font-size: 14px; color: rgb(91, 91, 102);">← All projects</a></header><section id="top" data-screen-label="Hero" style="max-width: 1200px; margin: 0px auto; padding: clamp(32px, 7vw, 88px) clamp(20px, 5vw, 48px) 0px;">
+  <div style="display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 28px;">
+    <span style="font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid rgb(228, 228, 234); border-radius: 999px; color: rgb(58, 58, 68);">B2B SaaS</span>
+    <span style="font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid rgb(228, 228, 234); border-radius: 999px; color: rgb(58, 58, 68);">Shopify app</span>
+    <span style="font-size: 13px; font-weight: 500; padding: 6px 12px; border: 1px solid rgb(228, 228, 234); border-radius: 999px; color: rgb(58, 58, 68);">AI copywriting</span>
+  </div>
+  <h1 style="font-weight: 600; font-size: clamp(30px, 4vw, 52px); line-height: 1.15; letter-spacing: -0.01em; margin: 0px; max-width: 16ch; text-wrap: balance;">Tomeo: product copy and SEO, <span style="color: rgb(43, 31, 209);">without the learning curve</span></h1>
+  <p style="font-size: clamp(18px, 2vw, 22px); line-height: 1.5; color: rgb(58, 58, 68); max-width: 46ch; margin: 28px 0px 0px; text-wrap: pretty;">An AI assistant inside Shopify admin that writes product titles, descriptions, tags and social captions, and shows merchants which products need SEO work first.</p>
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px 40px; margin-top: 56px; padding-top: 28px; border-top: 1px solid rgb(228, 228, 234);">
+    <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(107, 107, 118);">Timeline</span><span style="font-size: 16px; line-height: 1.5;">Mar 2025 – Oct 2025</span></div>
+    <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(107, 107, 118);">Status</span><span style="font-size: 16px; line-height: 1.5;">Discontinued before launch</span></div>
+    <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(107, 107, 118);">Team</span><span style="font-size: 16px; line-height: 1.5;">Me as the product designer, with 1 PM and 2 developers</span></div>
+    <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(107, 107, 118);">My role</span><span style="font-size: 16px; line-height: 1.5;">End-to-end product design: competitive analysis, user flows, wireframes, interactive prototype, high-fidelity UI and Polaris component implementation</span></div>
+  </div>
+  <img src="assets/tomeo/dashboard.webp" alt="Tomeo dashboard inside Shopify admin: store SEO score, social media posts, credits, and a table of previous operations" style="margin-top: 56px; width: 100%; border-radius: 20px; border: 1px solid rgb(228, 228, 234);">
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 24px 40px; margin-top: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 600; font-size: 44px; line-height: 1.15;">17</span><span style="font-size: 15px; line-height: 1.5; color: rgb(58, 58, 68);">competing apps reviewed</span></div>
+    <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 600; font-size: 44px; line-height: 1.15;">1</span><span style="font-size: 15px; line-height: 1.5; color: rgb(58, 58, 68);">of the 17 competing apps also wrote social media captions</span></div>
+    <div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-weight: 600; font-size: 44px; line-height: 1.15;">3</span><span style="font-size: 15px; line-height: 1.5; color: rgb(58, 58, 68);">steps in the core flow: select, generate, review</span></div>
+  </div></section><div style="max-width: 1200px; margin: 0px auto; padding: clamp(56px, 8vw, 112px) clamp(20px, 5vw, 48px); display: flex; gap: 72px; align-items: flex-start;">
+  
+    <nav class="toc" style="position: sticky; top: 32px; flex: 0 0 auto; width: 180px; display: flex; flex-direction: column; gap: 4px;">
+      <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(107, 107, 118); margin-bottom: 12px;">Contents</span>
+      
+        <a href="#tldr" style="font-size: 14px; line-height: 1.4; padding: 6px 0px 6px 14px; border-left: 2px solid rgb(43, 31, 209); color: rgb(17, 17, 20); font-weight: 600;">TL;DR</a>
+      
+        <a href="#problem" style="font-size: 14px; line-height: 1.4; padding: 6px 0px 6px 14px; border-left: 2px solid rgb(228, 228, 234); color: rgb(107, 107, 118); font-weight: 400;">Problem</a>
+      
+        <a href="#research" style="font-size: 14px; line-height: 1.4; padding: 6px 0px 6px 14px; border-left: 2px solid rgb(228, 228, 234); color: rgb(107, 107, 118); font-weight: 400;">Research</a>
+      
+        <a href="#goals" style="font-size: 14px; line-height: 1.4; padding: 6px 0px 6px 14px; border-left: 2px solid rgb(228, 228, 234); color: rgb(107, 107, 118); font-weight: 400;">Design goals</a>
+      
+        <a href="#decisions" style="font-size: 14px; line-height: 1.4; padding: 6px 0px 6px 14px; border-left: 2px solid rgb(228, 228, 234); color: rgb(107, 107, 118); font-weight: 400;">Key decisions</a>
+      
+        <a href="#system" style="font-size: 14px; line-height: 1.4; padding: 6px 0px 6px 14px; border-left: 2px solid rgb(228, 228, 234); color: rgb(107, 107, 118); font-weight: 400;">The product</a>
+      
+        <a href="#results" style="font-size: 14px; line-height: 1.4; padding: 6px 0px 6px 14px; border-left: 2px solid rgb(228, 228, 234); color: rgb(107, 107, 118); font-weight: 400;">Results</a>
+      
+        <a href="#learnings" style="font-size: 14px; line-height: 1.4; padding: 6px 0px 6px 14px; border-left: 2px solid rgb(228, 228, 234); color: rgb(107, 107, 118); font-weight: 400;">Learnings</a>
+      
+    </nav>
+  
+
+  <main style="flex: 1 1 0%; min-width: 0px; max-width: 780px; display: flex; flex-direction: column; gap: clamp(72px, 10vw, 128px);">
+
+    
+      <section id="tldr" data-screen-label="TL;DR" style="background: rgb(17, 17, 20); color: rgb(255, 255, 255); border-radius: 20px; padding: clamp(28px, 5vw, 48px); display: flex; flex-direction: column; gap: 28px;">
+        <span style="font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(185, 185, 198);">TL;DR</span>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 28px;">
+          <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-weight: 600; font-size: 20px;">Problem</span><span style="font-size: 15px; line-height: 1.6; color: rgb(214, 214, 222);">Shopify merchants write all the time, and the AI apps meant to help often produce generic copy or surprise them along the way.</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-weight: 600; font-size: 20px;">Solution</span><span style="font-size: 15px; line-height: 1.6; color: rgb(214, 214, 222);">A three-step flow inside Shopify admin, templates instead of a settings form, social captions, and Polaris throughout.</span></div>
+          <div style="display: flex; flex-direction: column; gap: 8px;"><span style="font-weight: 600; font-size: 20px;">Outcome</span><span style="font-size: 15px; line-height: 1.6; color: rgb(214, 214, 222);">Stopped before launch so the team could focus on Callingow. The design rests on competitor research, not on tests with merchants.</span></div>
+        </div>
+      </section>
+    
+
+    <section id="problem" data-screen-label="Problem" style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 13px; font-weight: 600; color: rgb(43, 31, 209); letter-spacing: 0.04em;">01 — The problem</span>
+      <h2 style="font-weight: 600; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin: 0px; text-wrap: balance;">Running a store means writing all the time</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Every product needs a title, a description and tags. Every page needs SEO metadata. Every launch needs a few social captions. For a small store, the person writing all of it is usually the owner.</p>
+      <div style="display: flex; flex-direction: column; border-top: 1px solid rgb(17, 17, 20); margin-top: 8px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Product pages</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Titles, descriptions and tags, rewritten whenever the catalog changes.</span></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Search</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Metadata that helps products get found, which most merchants don't know how to write.</span></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Social media</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Captions for Instagram and Facebook, written one product at a time.</span></div>
+      </div>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">AI copywriting apps already existed on the Shopify App Store, and merchants were using them. But the reviews told a mixed story.</p>
+    </section>
+
+    <section id="research" data-screen-label="Research" style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 13px; font-weight: 600; color: rgb(43, 31, 209); letter-spacing: 0.04em;">02 — Research</span>
+      <h2 style="font-weight: 600; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin: 0px; text-wrap: balance;">What merchants praised, and what they complained about</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">We had no access to Shopify merchants, so the research came from two secondary sources: what merchants wrote about competing apps, and our own evaluation of those apps.</p>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">First, I reviewed 17 AI copywriting and SEO apps on the Shopify App Store and read through hundreds of their reviews. For each app, I listed what merchants praised and what they complained about, then counted how many apps each theme came up for.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 32px; margin-top: 8px;">
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 14px; font-weight: 600; color: rgb(17, 17, 20); padding-bottom: 10px; border-bottom: 1px solid rgb(17, 17, 20);">Complaints</span>
+          <div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Bugs, slowdowns or errors</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 52.9%; background: rgb(229, 72, 77); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">9 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Credit limits, pricing or surprise charges</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 35.3%; background: rgb(229, 72, 77); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">6 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Generic, inaccurate or inconsistent copy</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 29.4%; background: rgb(229, 72, 77); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">5 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Lost data: descriptions, images or tags</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 23.5%; background: rgb(229, 72, 77); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">4 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Breaks down with a large catalog</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 17.6%; background: rgb(229, 72, 77); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">3 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Conflicts with the store's theme</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 17.6%; background: rgb(229, 72, 77); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">3 of 17</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <span style="font-size: 14px; font-weight: 600; color: rgb(17, 17, 20); padding-bottom: 10px; border-bottom: 1px solid rgb(17, 17, 20);">Praise</span>
+          <div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Saves time</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 94.1%; background: rgb(43, 31, 209); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">16 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Simple interface</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 41.2%; background: rgb(43, 31, 209); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">7 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Tone or brand voice control</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 35.3%; background: rgb(43, 31, 209); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">6 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Bulk generation</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 35.3%; background: rgb(43, 31, 209); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">6 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Several languages</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 29.4%; background: rgb(43, 31, 209); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">5 of 17</span>
+          </div><div style="display: grid; grid-template-columns: minmax(0px, 1fr) minmax(90px, 38%) 64px; gap: 16px; align-items: center; padding: 12px 0px; border-bottom: 1px solid rgb(228, 228, 234);">
+            <span style="font-size: 15px; line-height: 1.5; color: rgb(17, 17, 20);">Social media posts</span>
+            <span style="height: 8px; border-radius: 4px; background: rgb(239, 239, 243); overflow: hidden;"><span style="display: block; height: 100%; width: 5.9%; background: rgb(43, 31, 209); border-radius: 4px;"></span></span>
+            <span style="font-size: 14px; color: rgb(107, 107, 118); text-align: right; white-space: nowrap;">1 of 17</span>
+          </div>
+        </div>
+      </div>
+      <p style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118); margin: 0px;">Number of apps, out of 17, whose reviews raised each theme.</p>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Three things stood out:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 16px;">
+        <div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-weight: 600; font-size: 20px;">Time is table stakes</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Nearly every app saved time. It was the reason to install, not a reason to choose one app over another.</span></div>
+        <div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-weight: 600; font-size: 20px;">Trust is what broke</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Generic copy, surprise charges and lost data. The complaints were about output and control, not missing features.</span></div>
+        <div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-weight: 600; font-size: 20px;">Social was a gap</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Only one of the 17 apps wrote social media posts, though merchants write them every week.</span></div>
+      </div>
+      <h3 style="font-size: 26px; font-weight: 600; margin: 32px 0px 0px; line-height: 1.3;">Heuristic evaluation of competing apps, with the whole team</h3>
+      <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Then the whole team, including the PM and both developers, used the leading competing apps and evaluated them against Nielsen's 10 usability heuristics. Two problems kept coming up:</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+        <div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-weight: 600; font-size: 20px;">Actions you can't undo</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Generated text could be applied to products with no clear way back. Heuristic: user control and freedom.</span></div>
+        <div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-weight: 600; font-size: 20px;">Too many steps</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Getting to a first result took many screens and decisions. Heuristic: aesthetic and minimalist design.</span></div>
+      </div>
+      <div style="border-top: 1px solid rgb(228, 228, 234); border-bottom: 1px solid rgb(228, 228, 234); padding: 32px 0px; margin-top: 8px; display: flex; flex-direction: column; gap: 12px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">The insight</span>
+        <p style="font-weight: 500; font-size: clamp(20px, 2.2vw, 26px); line-height: 1.25; margin: 0px; text-wrap: pretty;">Merchants didn't need more features. They needed something that <span style="color: rgb(43, 31, 209);">works on the first try</span>: fast, simple, and with nothing reaching the store until they approve it.</p>
+      </div>
+    </section>
+
+    <section id="goals" data-screen-label="Design goals" style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 13px; font-weight: 600; color: rgb(43, 31, 209); letter-spacing: 0.04em;">03 — Design goals</span>
+      <h2 style="font-weight: 600; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin: 0px; text-wrap: balance;">Three goals to design against</h2>
+      <div style="display: flex; flex-direction: column; border-top: 1px solid rgb(17, 17, 20); margin-top: 8px;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Serve non-technical merchants first</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Most store owners aren't marketers or SEO specialists. If it needs explaining, it isn't done.</span></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Feel native to Shopify</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Merchants already know Shopify admin. Tomeo should look and behave like part of it.</span></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Simplify, then simplify again</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Every screen was reviewed for what could be removed, merged or moved out of the way.</span></div>
+      </div>
+    </section>
+
+    <section id="decisions" data-screen-label="Key decisions" style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 13px; font-weight: 600; color: rgb(43, 31, 209); letter-spacing: 0.04em;">04 — Key decisions</span>
+      <h2 style="font-weight: 600; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin: 0px; text-wrap: balance;">Four decisions that shaped the product</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Each one answers a finding from the reviews or the heuristic evaluation:</p>
+      <div style="display: flex; flex-direction: column; border-top: 1px solid rgb(17, 17, 20);">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Lost data (4 of 17), actions you can't undo</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Decision 1: nothing is written to the store until the merchant saves it.</span></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Too many steps</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Decisions 1 and 2: three steps, with defaults and templates instead of a form.</span></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Generic copy (5 of 17)</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Decision 2: templates with a clear structure, plus tone, length and language.</span></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Social posts (1 of 17)</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Decision 3: social captions get their own page.</span></div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Non-technical merchants</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Decision 4: Polaris, so Tomeo behaves like the admin they already know.</span></div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 16px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">Decision 1 · Core flow</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Three steps: select, generate, review</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">The whole product is built around one path. Pick products, or a whole collection. Generate. Review the suggestions, then copy them or save them to the store. Everything else is secondary.</p><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin-top: 8px;"><div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-weight: 600; font-size: 24px; color: rgb(43, 31, 209); line-height: 1.15;">1</span><span style="font-size: 19px; font-weight: 600;">Select</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Choose products from the catalog, filtered by collection.</span></div><div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-weight: 600; font-size: 24px; color: rgb(43, 31, 209); line-height: 1.15;">2</span><span style="font-size: 19px; font-weight: 600;">Generate</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Defaults are already set, so the first run needs no decisions.</span></div><div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 10px;"><span style="font-weight: 600; font-size: 24px; color: rgb(43, 31, 209); line-height: 1.15;">3</span><span style="font-size: 19px; font-weight: 600;">Review</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Copy any field, or save it to the store. Nothing changes until you do.</span></div></div><figure style="margin: 8px 0px 0px; display: flex; flex-direction: column; gap: 12px;"><img src="assets/tomeo/select.webp" alt="Product picker: products filtered by collection, each with a checkbox" style="width: 100%; border-radius: 12px; border: 1px solid rgb(228, 228, 234);"><figcaption style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118);">Step 1: products are picked from the catalog, one by one or by collection.</figcaption></figure><figure style="margin: 8px 0px 0px; display: flex; flex-direction: column; gap: 12px;"><img src="assets/tomeo/result.webp" alt="Generated title, description and tags for one product, each with a Copy button, and Save to Store at the bottom" style="width: 100%; border-radius: 12px; border: 1px solid rgb(228, 228, 234);"><figcaption style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118);">Step 3: every field can be copied on its own, and only Save to Store changes the product.</figcaption></figure><p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;"><strong style="color: rgb(17, 17, 20); font-weight: 600;">Why review comes first:</strong> four of the 17 apps had reviews about lost descriptions, images or tags, and our heuristic evaluation found the same problem: actions you can't undo. In Tomeo, nothing is written to a product page until the merchant saves it.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 48px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">Decision 2 · Templates</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Templates instead of a settings form</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Tone, length, language and content type are real choices, but for a first-time user they are four decisions before seeing any result. So the settings panel opens with sensible defaults, the optional instructions sit at the bottom, and templates turn the rest into one choice.</p><div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 8px;">
+          <div style="border: 1px solid rgb(228, 228, 234); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 14px; font-weight: 600; color: rgb(107, 107, 118);">Without templates</span><span style="font-size: 19px; font-weight: 600;">Four settings to choose</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Tone, length, language and fields. A first-time merchant has to decide all of them before seeing anything Tomeo writes.</span></div>
+          <div style="background: rgb(244, 243, 255); border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 8px;"><span style="font-size: 14px; font-weight: 600; color: rgb(43, 31, 209);">With templates</span><span style="font-size: 19px; font-weight: 600;">One choice, with a preview</span><span style="font-size: 15px; line-height: 1.6; color: rgb(58, 58, 68);">Quick Sell, Search Boost and Clear Details. Each shows the structure it will write and its cost in tokens, and one is marked as recommended.</span></div>
+        </div><figure style="margin: 8px 0px 0px; display: flex; flex-direction: column; gap: 12px;"><img loading="lazy" decoding="async" src="assets/tomeo/templates.webp" alt="Choose a Template dialog with three options: Quick Sell, Search Boost (recommended) and Clear Details, each with a preview of its structure and a token cost" style="width: 100%; border-radius: 12px; border: 1px solid rgb(228, 228, 234);"><figcaption style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118);">Each template shows what it will write before you use it.</figcaption></figure><p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Progressive disclosure got the most attention in our design reviews. With no merchants to test with, we walked a few non-technical people around us through the prototype, informally, and watched where they stopped. The goal was that someone could finish without touching a setting, and still find it when they wanted it.</p><p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;"><strong style="color: rgb(17, 17, 20); font-weight: 600;">The trade-off:</strong> a template hides some control. We kept the full settings panel one step away, so experienced merchants lose nothing.</p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 48px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">Decision 3 · Social captions</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Make social captions a first-class feature</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Only one competitor wrote social posts, so this was a gap, not a nice-to-have. Social captions got their own card on the dashboard and their own page. A merchant can select one or several products and get Instagram or Facebook captions for each, in the same tone and language settings as the rest of the app.</p><p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;"><strong style="color: rgb(17, 17, 20); font-weight: 600;">The trade-off:</strong> a gap is not proof of demand. Only one app offering social posts could also mean merchants don't want them from this kind of tool. So the feature is labeled Beta on the dashboard, with its own card, so its use could be measured on its own.</p><figure style="margin: 8px 0px 0px; display: flex; flex-direction: column; gap: 12px;"><img loading="lazy" decoding="async" src="assets/tomeo/social.webp" alt="Social Media Content page: caption settings on the left, and Instagram captions for two chairs on the right" style="width: 100%; border-radius: 12px; border: 1px solid rgb(228, 228, 234);"><figcaption style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118);">Captions for several products at once, each with Copy and Regenerate.</figcaption></figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 48px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">Decision 4 · Polaris</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Design with Polaris, not around it</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Tomeo is built from Shopify's Polaris components: the same page layout, cards, buttons, modals and tables merchants see everywhere else in their admin. It looks like part of Shopify, merchants already know how it behaves, and developers could build from components they already had, which made handoff faster.</p><p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;"><strong style="color: rgb(17, 17, 20); font-weight: 600;">The trade-off:</strong> less room for a visual identity. Tomeo's character lives in its illustrations, its yellow mark and its copy, not in custom components.</p>
+      </div>
+    </section>
+
+    <section id="system" data-screen-label="The product" style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 13px; font-weight: 600; color: rgb(43, 31, 209); letter-spacing: 0.04em;">05 — The product</span>
+      <h2 style="font-weight: 600; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin: 0px; text-wrap: balance;">Around the core flow</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Everything else in Tomeo exists to get merchants into the core flow, or to bring them back to it.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 8px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">A · Onboarding</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Setting up while the merchant watches</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Connecting the app takes a few seconds. Instead of an empty dashboard, the merchant sees each step happen: connected, workspace ready, store content being analyzed.</p>
+        <figure style="margin: 8px 0px 0px; display: flex; flex-direction: column; gap: 12px;"><img loading="lazy" decoding="async" src="assets/tomeo/onboarding.webp" alt="Setting up screen: a checklist of connected to Shopify, workspace initialized and analyzing store content, with a progress bar" style="width: 100%; border-radius: 12px; border: 1px solid rgb(228, 228, 234);"><figcaption style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118);">Onboarding shows what Tomeo is doing with the store, step by step.</figcaption></figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 40px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">B · Dashboard</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Three numbers and one button</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">The dashboard answers three questions: how is my store doing in search, have I posted anything, and how many credits are left. Each card has one action, and Generate Now leads straight into the core flow. Below it, every past operation stays one click away. It's the screen at the top of this page.</p>
+        
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 40px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">C · Improve SEO</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Start with the products that need it most</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Choosing which products to fix is the hard part for a non-specialist. Tomeo scores each product, so the weakest ones stand out and the merchant can start there.</p>
+        <figure style="margin: 8px 0px 0px; display: flex; flex-direction: column; gap: 12px;"><img loading="lazy" decoding="async" src="assets/tomeo/seo.webp" alt="Select products dialog with an SEO score bar next to each product; four products with low scores are selected" style="width: 100%; border-radius: 12px; border: 1px solid rgb(228, 228, 234);"><figcaption style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118);">Products with an SEO score each, so the weakest are easy to pick.</figcaption></figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 40px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">D · Operation history</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Every run is saved, with its settings</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Each operation keeps its products, tone, content type and token cost. A merchant can come back later, review the results and save the ones they skipped.</p>
+        <figure style="margin: 8px 0px 0px; display: flex; flex-direction: column; gap: 12px;"><img loading="lazy" decoding="async" src="assets/tomeo/operation.webp" alt="Operation #2: a summary with tokens, date, content and tone on the left, and the generated results for each product on the right" style="width: 100%; border-radius: 12px; border: 1px solid rgb(228, 228, 234);"><figcaption style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118);">An operation summary, with its results ready to review again.</figcaption></figure>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 40px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">E · Mobile</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">The same flow in mobile admin</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Merchants also run their stores from Shopify's mobile app, so every screen was also designed for phones.</p>
+        <figure style="margin: 8px 0px 0px; display: flex; flex-direction: column; gap: 12px;"><div style="background: rgb(242, 243, 248); border-radius: 16px; padding: clamp(20px, 3vw, 32px); display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;"><img loading="lazy" decoding="async" src="assets/tomeo/m-dashboard.webp" alt="Tomeo dashboard on mobile" style="width: min(30%, 210px); border-radius: 20px; border: 1px solid rgb(228, 228, 234);"><img loading="lazy" decoding="async" src="assets/tomeo/m-templates.webp" alt="Selected products on mobile" style="width: min(30%, 210px); border-radius: 20px; border: 1px solid rgb(228, 228, 234);"><img loading="lazy" decoding="async" src="assets/tomeo/m-result.webp" alt="Generated content for a chair on mobile" style="width: min(30%, 210px); border-radius: 20px; border: 1px solid rgb(228, 228, 234);"></div><figcaption style="font-size: 14px; line-height: 1.6; color: rgb(107, 107, 118);">Dashboard, selected products and results on mobile.</figcaption></figure>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 40px;">
+        <span style="font-size: 14px; color: rgb(107, 107, 118);">A tension I didn't fully solve</span>
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">Tomeo charges in tokens, the model merchants complained about</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Credit limits and surprise charges came up for 6 of the 17 apps, and Tomeo also uses tokens. Design couldn't change what Tomeo charges, but it could change when the merchant sees the cost. Every Generate and Use button shows its price in tokens before it's clicked, the remaining balance sits next to the page title, and every operation records what it cost.</p>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">Whether that is enough is something only real usage would have shown, which is why it's the first thing I would have tested next.</p>
+      </div>
+    </section>
+
+    <section id="results" data-screen-label="Results" style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 13px; font-weight: 600; color: rgb(43, 31, 209); letter-spacing: 0.04em;">06 — Results</span>
+      <h2 style="font-weight: 600; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin: 0px; text-wrap: balance;">Stopped to focus on a bigger product</h2>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">In October 2025, we stopped work on Tomeo to put the team's time into Callingow, a more complete product that we plan to publish on the Shopify App Store as well. Tomeo never launched, so there are no usage numbers.</p>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">We also never interviewed or tested with real merchants. Everything above rests on secondary research: what merchants wrote about other apps, and what we found using those apps ourselves. The decisions are well-grounded hypotheses, not validated ones.</p>
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">What I would have measured after launch</h3>
+        <p style="font-size: 17px; line-height: 1.7; color: rgb(58, 58, 68); margin: 0px; text-wrap: pretty;">These are the numbers I would have watched first:</p>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid rgb(17, 17, 20);">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Time to first save</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">How long a new merchant takes from installing the app to saving their first generated text.</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Edits before saving</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">How much merchants change a suggestion before they save it. Fewer edits means less generic copy.</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Templates vs. settings</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">How often merchants choose a template, and which one.</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Social captions</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">The share of operations that are social captions, to test whether the gap was real.</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="learnings" data-screen-label="Learnings" style="display: flex; flex-direction: column; gap: 24px;">
+      <span style="font-size: 13px; font-weight: 600; color: rgb(43, 31, 209); letter-spacing: 0.04em;">07 — What we learned</span>
+      <h2 style="font-weight: 600; font-size: clamp(26px, 2.8vw, 36px); line-height: 1.15; letter-spacing: -0.01em; margin: 0px; text-wrap: balance;">Simplicity is a feature you can compete on</h2>
+      <div style="display: flex; flex-direction: column; border-top: 1px solid rgb(17, 17, 20);">
+        <div style="display: flex; gap: 20px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-weight: 600; font-size: 20px; color: rgb(43, 31, 209); flex: 0 0 auto; width: 28px;">i</span><div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 19px; font-weight: 600;">Simplicity is a competitive advantage</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">In a category where every app saves time, being easy to start with is what sets one apart.</span></div></div>
+        <div style="display: flex; gap: 20px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-weight: 600; font-size: 20px; color: rgb(43, 31, 209); flex: 0 0 auto; width: 28px;">ii</span><div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 19px; font-weight: 600;">Secondary research only goes so far</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Reviews and heuristics showed what to avoid. They couldn't show whether merchants would find Tomeo's copy good enough to save.</span></div></div>
+        <div style="display: flex; gap: 20px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-weight: 600; font-size: 20px; color: rgb(43, 31, 209); flex: 0 0 auto; width: 28px;">iii</span><div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 19px; font-weight: 600;">Polaris is both a constraint and a shortcut</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">It limits how a product can look, but it makes the product feel trustworthy inside Shopify and speeds up development.</span></div></div>
+        <div style="display: flex; gap: 20px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-weight: 600; font-size: 20px; color: rgb(43, 31, 209); flex: 0 0 auto; width: 28px;">iv</span><div style="display: flex; flex-direction: column; gap: 6px;"><span style="font-size: 19px; font-weight: 600;">Heuristic evaluation is underrated for small teams</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Evaluating competitors together gave a team with no access to users a shared, structured view of what to avoid, at almost no cost.</span></div></div>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 16px; margin-top: 24px;">
+        <h3 style="font-size: 26px; font-weight: 600; margin: 0px; line-height: 1.3;">What I would do differently</h3>
+        <div style="display: flex; flex-direction: column; border-top: 1px solid rgb(17, 17, 20);">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Talk to merchants before designing</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">We never interviewed or tested with a real merchant. Even five store owners with real catalogs would have shown whether the copy was good enough to save.</span></div>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 8px 32px; padding: 24px 0px; border-bottom: 1px solid rgb(228, 228, 234);"><span style="font-size: 22px; font-weight: 600;">Test the token model with the flow</span><span style="font-size: 16px; line-height: 1.6; color: rgb(58, 58, 68);">Pricing was one of the most common complaints in the research. Putting token prices in front of merchants early would have told us whether visible prices were enough.</span></div>
+        </div>
+      </div>
+      <p style="font-size: 18px; line-height: 1.7; color: rgb(17, 17, 20); margin: 8px 0px 0px; text-wrap: pretty;">The full designs are available on request.</p>
+    </section>
+
+  </main></div><section id="next" data-screen-label="Next project" style="border-top: 1px solid rgb(228, 228, 234);">
+  <a href="callingow.html" style="max-width: 1200px; margin: 0px auto; padding: clamp(48px, 8vw, 96px) clamp(20px, 5vw, 48px); display: flex; flex-direction: column; gap: 12px; color: rgb(17, 17, 20);">
+    <span style="font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: rgb(107, 107, 118);">Next case study</span>
+    <span style="font-weight: 600; font-size: clamp(30px, 4vw, 52px); line-height: 1.15; letter-spacing: -0.01em;">Callingow →</span>
+  </a></section><footer style="max-width: 1200px; margin: 0px auto; padding: 24px clamp(20px, 5vw, 48px) 40px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 14px; color: rgb(107, 107, 118);">
+  <span>© 2026 Mohammad Rastegar</span>
+  <a href="#top">Back to top ↑</a></footer></div>
+<script>
+(function(){var nav=document.querySelector('.toc');if(!nav)return;var links=[].slice.call(nav.querySelectorAll('a[href^="#"]'));
+function set(){var cur=links[0];links.forEach(function(a){var el=document.getElementById(a.getAttribute('href').slice(1));if(el&&el.getBoundingClientRect().top<innerHeight*0.35)cur=a});
+links.forEach(function(a){var on=a===cur;a.style.color=on?'#111114':'#6B6B76';a.style.borderLeftColor=on?'#2B1FD1':'#E4E4EA';a.style.fontWeight=on?'600':'400'})}
+addEventListener('scroll',set,{passive:true});set();})();
+</script>
+</body>
+</html>
